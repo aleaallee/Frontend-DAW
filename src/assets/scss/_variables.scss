@@ -1,0 +1,25 @@
+:root {
+  --fuente-principal: Lato;
+  --fuente-titulos: Inter;
+  --negro: #191919;
+  --azulOscuro: #364d63;
+  --gris: #dddddd;
+  --naranja: #f15946;
+  --verde: #2cd9ad;
+  --content-width: 100%;
+  --bordes: var(--gris);
+  --size-fuente-nav: clamp(1.2rem, 1.1vw, 3rem);
+
+  @media (min-width: 1024px) {
+    --content-width: 85%;
+  }
+
+  @media (min-width: 1600px) {
+    --content-width: 75%;
+    --size-fuente-nav: clamp(0.5rem, 1.1vw, 3rem);
+  }
+
+  @media (min-width: 2500px) {
+    --content-width: 70%;
+  }
+}

@@ -1,0 +1,31 @@
+<header>
+  <nav>
+    <div class="navwrapper">
+      <section class="logo">
+        <a href="" [routerLink]="['/inicio']">OVI<span>WARE</span></a>
+      </section>
+      <section class="search">
+        <input
+          type="search"
+          name="searchInput"
+          id="searchInput"
+          #searchInput
+          placeholder="Buscar componente..."
+        />
+        <fa-icon [icon]="faSearch" ngClass="icon"></fa-icon>
+      </section>
+      <section class="navlinks">
+        <div class="link">
+          <a href="#" [routerLink]="">Inicio</a>
+        </div>
+        <div class="link">
+          <a href="#">Link</a>
+        </div>
+        <div class="link">
+          <a href="#">Link</a>
+        </div>
+      </section>
+    </div>
+    <!-- https://coolors.co/191919-364d63-f15946-2cda9d -->
+  </nav>
+</header>
