@@ -6,12 +6,8 @@ import { HomeComponent } from '@components/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/inicio',
-    pathMatch: 'full',
-  },
-  {
-    path: 'inicio',
     component: HomeComponent,
+    pathMatch: 'full',
   },
 ];
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -7,8 +6,15 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  faSearch = faSearch;
+  expanded = false;
+  toggled = false;
+  navWrapperToggled = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleDropdown(): void {
+    this.toggled = !this.toggled;
+  }
 }

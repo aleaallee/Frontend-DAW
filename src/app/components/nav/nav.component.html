@@ -1,8 +1,17 @@
 <header>
   <nav>
-    <div class="navwrapper">
+    <div
+      class="navwrapper"
+      role="menubar"
+      [ngClass]="{ active: navWrapperToggled }"
+    >
       <section class="logo">
-        <a href="" [routerLink]="['/inicio']">OVI<span>WARE</span></a>
+        <a href="" [routerLink]="['/']" role="menuitem">OVI<span>WARE</span></a>
+        <mat-icon
+          ngClass="icon"
+          (click)="navWrapperToggled = !navWrapperToggled"
+          >hamburger_menu</mat-icon
+        >
       </section>
       <section class="search">
         <input
@@ -11,20 +20,80 @@
           id="searchInput"
           #searchInput
           placeholder="Buscar componente..."
+          role="menuitem"
         />
-        <fa-icon [icon]="faSearch" ngClass="icon"></fa-icon>
+        <mat-icon
+          aria-hidden="false"
+          ngClass="icon"
+          aria-label="Example home icon"
+          >search</mat-icon
+        >
       </section>
-      <section class="navlinks">
-        <div class="link">
-          <a href="#" [routerLink]="">Inicio</a>
-        </div>
-        <div class="link">
-          <a href="#">Link</a>
-        </div>
-        <div class="link">
-          <a href="#">Link</a>
-        </div>
-      </section>
+      <ul class="navlinks" role="menu">
+        <li
+          class="link dropdown"
+          role="none"
+          (mouseover)="expanded = true"
+          (mouseout)="expanded = false"
+          (click)="toggled = !toggled"
+        >
+          <a
+            role="menuitem"
+            href="#"
+            tabindex="0"
+            [routerLink]="['/componentes']"
+            [attr.aria-expanded]="expanded"
+            aria-haspopup="true"
+            (focus)="expanded = true"
+            (blur)="expanded = false"
+            aria-controls="menu-list"
+          >
+            <mat-icon
+              aria-hidden="false"
+              ngClass="icon"
+              aria-label="Example home icon"
+              class="navIcon"
+              >computer</mat-icon
+            >
+            <span>Componentes</span> &#8595;</a
+          >
+          <ul
+            class="submenu"
+            role="menu"
+            aria-label="componentes"
+            [ngClass]="{ active: toggled }"
+          >
+            <li><a href="#" tabindex="0" role="menuitem">awd1</a></li>
+            <li><a href="#" tabindex="0" role="menuitem">awd2</a></li>
+            <li><a href="#" tabindex="0" role="menuitem">awd3</a></li>
+            <li><a href="#" tabindex="0" role="menuitem">awd4</a></li>
+          </ul>
+        </li>
+        <li class="link" role="none">
+          <a role="menuitem" href="#" tabindex="0">
+            <mat-icon
+              aria-hidden="false"
+              ngClass="icon"
+              aria-label="Example home icon"
+              class="navIcon"
+              >person</mat-icon
+            >
+            <span>Cuenta</span></a
+          >
+        </li>
+        <li class="link" role="none">
+          <a role="menuitem" href="#" tabindex="0">
+            <mat-icon
+              aria-hidden="false"
+              ngClass="icon"
+              aria-label="Example home icon"
+              class="navIcon"
+              >shopping_cart</mat-icon
+            >
+            <span>Carrito</span></a
+          >
+        </li>
+      </ul>
     </div>
     <!-- https://coolors.co/191919-364d63-f15946-2cda9d -->
   </nav>

@@ -1,1 +1,79 @@
-<p>home works!</p>
+<section class="container-fluid container-lg">
+  <div class="row">
+    <div class="col-12 banner">
+      <h1>
+        <strong>OVI</strong><span>WARE</span>, tu tienda de componentes en
+        Oviedo!
+      </h1>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+    <div class="col-12">
+      {{ fabricantes | json }}
+      <ul style="column-count: 3">
+        <li *ngFor="let fabricante of fabricantes">
+          {{ fabricante.nombre }}
+        </li>
+      </ul>
+    </div>
+  </div> -->
+</section>
+
+<section class="categorias">
+  <div class="tituloseccion">
+    <h2>CATEGORÍAS <span>DESTACADAS</span></h2>
+  </div>
+  <div class="lista">
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/cpu']">
+        <img src="assets/img/cpu.jpg" alt="Procesadores" />
+        <span>Procesadores</span>
+      </a>
+    </div>
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/placas']">
+        <img src="assets/img/placabase.jpg" alt="Placas base" />
+        <span>Placas base</span>
+      </a>
+    </div>
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/fuentes']">
+        <img
+          src="assets/img/fuenteAlimentacion.jpg"
+          alt="Fuentes de alimentación"
+        />
+        <span>Fuentes de alimentación </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="productos_destacados">
+  <div class="tituloseccion">
+    <h2>COMPONENTES <span>DESTACADAS</span></h2>
+  </div>
+  <div class="lista">
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/cpu']">
+        <img src="assets/img/cpu.jpg" alt="Procesadores" />
+        <span>Intel Core I9</span>
+      </a>
+    </div>
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/placas']">
+        <img src="assets/img/placabase.jpg" alt="Placas base" />
+        <span>Placas base</span>
+      </a>
+    </div>
+    <div class="objlista">
+      <a href="" [routerLink]="['/componentes/fuentes']">
+        <img
+          src="assets/img/fuenteAlimentacion.jpg"
+          alt="Fuentes de alimentación"
+        />
+        <span>Fuentes de alimentación </span>
+      </a>
+    </div>
+  </div>
+</section>

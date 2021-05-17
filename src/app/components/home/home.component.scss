@@ -1,0 +1,90 @@
+.banner {
+  text-align: center;
+}
+
+section {
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+
+  &:nth-child(1) {
+    margin: 0 auto 2rem auto;
+  }
+
+  h1,
+  h2 {
+    font-weight: 400;
+  }
+  h1 span,
+  h2 span {
+    font-weight: bold;
+  }
+
+  &.categorias,
+  &.productos_destacados {
+    min-height: 50px;
+    border: 1px solid var(--gris);
+    width: var(--content-width);
+
+    .tituloseccion {
+      text-align: center;
+    }
+
+    .lista {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .objlista {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0.5rem 0;
+
+      a {
+        text-decoration: none;
+        color: var(--negro);
+        font-size: calc(var(--size-texto) + 5px);
+        text-align: center;
+        transition: color 0.3s ease;
+
+        span {
+          margin-top: 1.2rem;
+        }
+
+        &:hover {
+          color: var(--destacado);
+        }
+      }
+
+      a img {
+        width: 100%;
+      }
+
+      @media (min-width: 1024px) {
+        width: 25%;
+      }
+    }
+  }
+
+  &.categorias {
+  }
+}
+
+.row {
+  margin-top: 2rem;
+
+  .destacados {
+    text-align: center;
+  }
+
+  &.categorias {
+    position: relative;
+    align-items: center;
+    gap: 10px;
+  }
+}

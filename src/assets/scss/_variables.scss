@@ -4,22 +4,26 @@
   --negro: #191919;
   --azulOscuro: #364d63;
   --gris: #dddddd;
-  --naranja: #f15946;
+  --destacado: #f15946;
   --verde: #2cd9ad;
-  --content-width: 100%;
+  --content-width: 95%;
   --bordes: var(--gris);
-  --size-fuente-nav: clamp(1.2rem, 1.1vw, 3rem);
+  --size-fuente-nav: 1.2rem;
+  --size-titulo1: 1.6rem;
+  --size-titulo2: 1.5rem;
+  --size-titulo3: 1.4rem;
+  --size-texto: 1.2rem;
 
   @media (min-width: 1024px) {
-    --content-width: 85%;
+    --content-width: 90%;
   }
 
   @media (min-width: 1600px) {
     --content-width: 75%;
-    --size-fuente-nav: clamp(0.5rem, 1.1vw, 3rem);
+    --size-fuente-nav: clamp(0.5rem, 1.1vw, 1.1rem);
   }
 
   @media (min-width: 2500px) {
-    --content-width: 70%;
+    --content-width: 60%;
   }
 }
