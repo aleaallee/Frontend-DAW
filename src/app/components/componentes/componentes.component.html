@@ -1,0 +1,83 @@
+<section class="content">
+  <div
+    class="modalblur"
+    [ngClass]="{ active: this.filtrado }"
+    (click)="this.filtrado = false"
+  ></div>
+  <aside
+    class="sidebar"
+    (blur)="this.filtrado = false"
+    [ngClass]="{ active: this.filtrado }"
+  >
+    <div class="section">
+      <h3>Fabricantes</h3>
+      <div class="fabricantes">
+        <div class="fabricante">
+          <label for="fabricante"
+            ><input
+              type="radio"
+              [value]=""
+              name="fabricante"
+              checked
+              (click)="limpiarFiltro()"
+            />
+            <span>-------</span>
+          </label>
+        </div>
+        <div class="fabricante" *ngFor="let fabricante of fabricantes">
+          <label for="">
+            <input
+              type="radio"
+              [id]="fabricante.nombre"
+              [(ngModel)]="filtroFabricantes"
+              [value]="fabricante.id"
+              name="fabricante"
+            />
+            <span>{{ fabricante.nombre }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="productsection">
+    <div class="title">
+      <h1>Componentes</h1>
+    </div>
+    <div class="filters">
+      <select name="filtros" id="filtros">
+        <option value="" selected>----</option>
+        <option value="caros">Precio - Más caros</option>
+        <option value="baratos">Precio - Más baratos</option>
+      </select>
+
+      <button class="filtrarBTN" (click)="this.filtrado = !this.filtrado">
+        Filtrar
+      </button>
+    </div>
+
+    <div class="productgrid">
+      <article
+        class="product"
+        *ngFor="
+          let componente of componentes | filtroFabricante: filtroFabricantes
+        "
+      >
+        <div class="image">
+          <img
+            [src]="endpoint + '/imagenes/' + componente.imagen.split('.')[0]"
+            [alt]="'Componente ' + componente.id"
+          />
+        </div>
+        <div class="textinfo">
+          <a class="titulo" href="#">
+            {{ fabricantes[componente.fabricante - 1].nombre }}
+            {{ componente.modelo }}
+          </a>
+        </div>
+        <div class="price">
+          <p>{{ componente.precio }}€</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

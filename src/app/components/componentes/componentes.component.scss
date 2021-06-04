@@ -1,0 +1,179 @@
+.content {
+  flex-direction: column;
+  border: 1px solid var(--bordes);
+  min-height: 1000px;
+
+  select {
+    padding: 0.25rem 0;
+    &:active,
+    &:focus {
+      border-color: var(--naranja);
+    }
+  }
+
+  .title {
+    text-align: center;
+    padding: 1rem 0 0 0;
+  }
+
+  .modalblur {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  aside.sidebar {
+    position: absolute;
+    display: flex;
+    background-color: #fff;
+    width: 75%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate3d(-300px, 0, 0);
+    transition: transform 0.15s linear;
+
+    & > *,
+    & * {
+      z-index: 2;
+    }
+
+    &.active {
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (min-width: 1024px) {
+      position: relative;
+      width: 25%;
+      height: unset;
+      top: unset;
+      left: unset;
+      z-index: unset;
+      transform: unset;
+    }
+  }
+
+  .sidebar .section {
+    width: 100%;
+    padding: 0.5rem 1rem;
+
+    h3 {
+      border-bottom: 1px solid var(--negro);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .fabricante {
+      margin: 0.5rem 0;
+
+      label > *:not(input) {
+        margin-left: 0.5rem;
+      }
+      input:checked + label {
+        font-weight: bolder;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      padding: 2rem 1rem 0.5rem 1rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.productsection {
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    width: 75%;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 20px;
+  border-top: 1px solid var(--bordes);
+  border-bottom: 1px solid var(--bordes);
+  margin: 1rem 0;
+  padding: 1rem;
+
+  button.filtrarBTN {
+    font-family: var(--fuente-principal);
+    background-color: var(--destacado);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+}
+
+.productgrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+
+  .product {
+    width: 33%;
+    padding: 0.5rem;
+    margin: 1rem;
+    // border: 1px solid #aa00ff;
+
+    .textinfo,
+    .price {
+      max-width: 220px;
+      padding: 0 0.5rem;
+      margin-top: 0.5rem;
+
+      p,
+      a {
+        word-wrap: break-word;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--negro);
+      }
+    }
+
+    .price {
+      p {
+        color: var(--destacado);
+      }
+    }
+
+    .image {
+      position: relative;
+      width: 100%;
+    }
+
+    .image img {
+      width: inherit;
+    }
+
+    @media(min-width: 1024px){
+      width: 25%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    // flex-direction: row;
+  }
+}

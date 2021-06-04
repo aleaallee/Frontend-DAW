@@ -41,7 +41,6 @@ nav {
   width: 100%;
   height: inherit;
   min-height: inherit;
-
   a,
   mat-icon {
     float: left;
@@ -57,7 +56,7 @@ nav {
   a {
     text-decoration: none;
     color: var(--negro);
-    width: inherit;
+    z-index: 2;
 
     @media (min-width: 1024px) {
       width: initial;
@@ -75,6 +74,8 @@ nav {
     width: unset;
     font-size: 2.2rem;
     transition: 0.2s color ease-out;
+    z-index: 1;
+
     &:active {
       color: var(--destacado);
     }
@@ -199,6 +200,7 @@ nav {
       @media (min-width: 1024px) {
         overflow-y: initial;
         animation: unset;
+        height: initial;
       }
     }
 

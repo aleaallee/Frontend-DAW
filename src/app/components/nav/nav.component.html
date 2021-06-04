@@ -63,14 +63,30 @@
             aria-label="componentes"
             [ngClass]="{ active: toggled }"
           >
-            <li><a href="#" tabindex="0" role="menuitem">awd1</a></li>
-            <li><a href="#" tabindex="0" role="menuitem">awd2</a></li>
-            <li><a href="#" tabindex="0" role="menuitem">awd3</a></li>
-            <li><a href="#" tabindex="0" role="menuitem">awd4</a></li>
+            <li>
+              <a href="#" [routerLink]="['']" tabindex="0" role="menuitem">
+                Procesadores
+              </a>
+            </li>
+            <li>
+              <a href="#" [routerLink]="['']" tabindex="0" role="menuitem">
+                Placas Base
+              </a>
+            </li>
+            <li>
+              <a href="#" [routerLink]="['']" tabindex="0" role="menuitem">
+                Tarjetas gráficas
+              </a>
+            </li>
+            <li>
+              <a href="#" [routerLink]="['']" tabindex="0" role="menuitem">
+                Fuentes de alimentación
+              </a>
+            </li>
           </ul>
         </li>
         <li class="link" role="none">
-          <a role="menuitem" href="#" tabindex="0">
+          <a role="menuitem" href="#" [routerLink]="['cuenta']" tabindex="0">
             <mat-icon
               aria-hidden="false"
               ngClass="icon"

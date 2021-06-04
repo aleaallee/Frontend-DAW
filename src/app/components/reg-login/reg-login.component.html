@@ -1,0 +1,128 @@
+<section class="contenedor">
+  <h1>Cuenta</h1>
+
+  <div class="switch">
+    <button (click)="registro = true">Registro</button>
+    <button (click)="registro = false">Iniciar sesión</button>
+  </div>
+
+  <div class="account-wrapper">
+    <article class="registro" [ngClass]="{ oculto: registro == false }">
+      <h2>Registro</h2>
+      <form
+        ngSubmit="onSubmit()"
+        [formGroup]="formRegistro"
+        (ngSubmit)="registrarse()"
+        enctype="multipart/form-data"
+      >
+        <div class="inputgroup completo">
+          <label for="username">Nombre de usuario</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Pepito"
+            formControlName="username"
+            required
+            minlength="3"
+          />
+          <span class="error" *ngIf="getReg.username.errors?.minlength"
+            >El nombre de usuario es demasiado corto</span
+          >
+        </div>
+        <div class="inputgroup completo">
+          <label for="correo">Correo</label>
+          <input
+            type="email"
+            name="correo"
+            id="correo"
+            formControlName="correo"
+            placeholder="correo@ejemplo.com"
+            required
+          />
+          <span class="error" *ngIf="getReg.correo.errors?.required"
+            >Has de introducir un correo</span
+          >
+        </div>
+        <div class="inputgroup">
+          <label for="contra">Contraseña</label>
+          <input
+            type="password"
+            name="contra"
+            id="contra"
+            formControlName="pass"
+            required
+            minlength="6"
+          />
+          <span class="error" *ngIf="getReg.pass.errors?.minlength"
+            >La contraseña es demasiado corta</span
+          >
+        </div>
+        <div class="inputgroup">
+          <label for="contra2">Repite la contraseña</label>
+          <input
+            type="password"
+            name="contra2"
+            id="contra2"
+            formControlName="pass2"
+            required
+            minlength="6"
+          />
+          <span class="error" *ngIf="getReg.pass2.errors?.minlength"
+            >La contraseña es demasiado corta</span
+          >
+        </div>
+        <div class="inputgroup completo centrado">
+          <span class="errormsg">{{ regErrMsg }}</span>
+          <input
+            type="submit"
+            [disabled]="formRegistro.invalid"
+            value="Registrarse"
+          />
+        </div>
+      </form>
+    </article>
+    <article class="login" [ngClass]="{ oculto: registro == true }">
+      <h2>Iniciar sesión</h2>
+      <form
+        ngSubmit="onSubmit()"
+        [formGroup]="formLogin"
+        (ngSubmit)="login()"
+        enctype="multipart/form-data"
+      >
+        <div class="inputgroup completo">
+          <label for="loginuser">Usuario</label>
+          <input
+            type="text"
+            name="loginuser"
+            id="loginuser"
+            placeholder=""
+            formControlName="username"
+            required
+            minlength="3"
+          />
+        </div>
+        <div class="inputgroup completo">
+          <label for="loginpass">Contraseña</label>
+          <input
+            type="password"
+            name="loginpass"
+            id="loginpass"
+            formControlName="pass"
+            required
+            minlength="6"
+          />
+        </div>
+
+        <div class="inputgroup completo centrado">
+          <span class="errormsg" #loginmsg></span>
+          <input
+            type="submit"
+            [disabled]="formLogin.invalid"
+            value="Iniciar sesión"
+          />
+        </div>
+      </form>
+    </article>
+  </div>
+</section>

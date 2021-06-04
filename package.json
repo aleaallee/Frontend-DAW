@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --disable-host-check",
-    "build": "ng build",
-    "build:prod": "ng build --prod && xcopy /Y /i /e ..\\..\\public\\assets\\index.html ..\\..\\resources\\views\\angular.blade.php && xcopy /Y /i /e ..\\..\\public\\assets\\assets\\img ..\\..\\public\\assets\\img",
+    "build": "ng build --prod --base-href=/Proyecto/frontend/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

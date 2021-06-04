@@ -1,0 +1,158 @@
+section {
+  margin: 2rem auto 2rem auto;
+  padding: 1rem 1rem 4.5rem 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  h1 {
+    color: var(--destacado);
+  }
+
+  &.contenedor {
+    width: var(--content-width);
+
+    .tituloseccion {
+      text-align: center;
+    }
+
+    .account-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      width: 100%;
+
+      article {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem 0.5rem;
+
+        h2 {
+          text-align: center;
+          padding: 1rem 0;
+          color: var(--destacado);
+        }
+
+        @media (min-width: 1024px) {
+          margin: 0 0.5rem;
+          width: 50%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+    }
+
+    .inputgroup {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0 1rem;
+
+      span {
+        color: red;
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      &.completo {
+        width: 100%;
+      }
+
+      &.centrado {
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        text-transform: capitalize;
+        margin-bottom: 0.35rem;
+        color: var(--destacado);
+      }
+
+      input[type="submit"] {
+        font-size: var(--size-texto);
+        color: var(--destacado);
+        background-color: unset;
+        border: 1px solid var(--destacado);
+        margin: 0 auto;
+        padding: 0.5rem 1.25rem;
+        transition: all 0.25s ease-out;
+        cursor: pointer;
+
+        &:disabled {
+          cursor: not-allowed;
+          transition: unset;
+          background-color: var(--gris);
+          border: none;
+        }
+
+        &:hover {
+          border: none;
+          color: white;
+          padding-bottom: calc(0.5rem + 1px);
+          background-color: var(--destacado);
+        }
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        padding: 0.5rem 0.5rem;
+        border: 1px solid var(--azulOscuro);
+        border-radius: 7px;
+        width: 100%;
+
+        &:active,
+        &:focus {
+          border: 2px solid var(--destacado);
+          outline: none;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.oculto {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: initial;
+  }
+}
+
+div.switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.2rem;
+
+  button {
+    font-size: var(--size-texto);
+    color: var(--destacado);
+    background-color: unset;
+    border: 1px solid var(--destacado);
+    margin: 0 auto;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+
+    &.oculto {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
