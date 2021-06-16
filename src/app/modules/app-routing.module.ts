@@ -21,6 +21,10 @@ const routes: Routes = [
     component: RegLoginComponent,
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

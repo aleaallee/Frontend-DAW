@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ComponentesComponent } from './components/componentes/componentes.component';
 import { FabricantePipe } from './filters/fabricante.pipe';
 import { RegLoginComponent } from './components/reg-login/reg-login.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RegLoginComponent } from './components/reg-login/reg-login.component';
     ComponentesComponent,
     FabricantePipe,
     RegLoginComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,

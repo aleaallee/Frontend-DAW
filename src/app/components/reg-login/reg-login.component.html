@@ -29,6 +29,9 @@
           <span class="error" *ngIf="getReg.username.errors?.minlength"
             >El nombre de usuario es demasiado corto</span
           >
+          <span class="error" *ngIf="getReg.username.errors?.forbiddenName"
+            >El nombre de usuario introducido está prohibido.</span
+          >
         </div>
         <div class="inputgroup completo">
           <label for="correo">Correo</label>
@@ -108,14 +111,17 @@
             type="password"
             name="loginpass"
             id="loginpass"
-            formControlName="pass"
+            formControlName="password"
             required
             minlength="6"
           />
+          <span class="error" *ngIf="getLogin.password.errors?.minlength"
+            >La contraseña es demasiado corta</span
+          >
         </div>
 
         <div class="inputgroup completo centrado">
-          <span class="errormsg" #loginmsg></span>
+          <span class="errormsg">{{ loginErrMsg }}</span>
           <input
             type="submit"
             [disabled]="formLogin.invalid"

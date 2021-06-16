@@ -9,12 +9,19 @@ export class NavComponent implements OnInit {
   expanded = false;
   toggled = false;
   navWrapperToggled = false;
+  isLogged: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkLogin();
+  }
 
   toggleDropdown(): void {
     this.toggled = !this.toggled;
+  }
+
+  checkLogin(): void {
+    this.isLogged = localStorage.getItem('username') ? true : false;
   }
 }
